@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="weixin.css">
+    <title>微信主页</title>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="left">
+                微信(5)
+            </div>
+            <div class="right1">
+                <a href="#"><img src="img/22.png" alt=""></a>
+            </div>
+            <div class="right2">
+                    <a href="#"><img src="img/21.png" alt=""></a>
+            </div>
+        </header>
+        <a href="#">
+        <div class="one" id="one" onclick="one()">
+        <div class="img1">
+            <img id="pic1" src="img/1.jpg" alt="">
+        </div>
+        <div class="dialog">
+            <h1 id="one1">小年糕前端训练营</h1>
+            <span id="one2">靳博宇:好的好的，知道了！</span>
+        </div>
+        <div class="time" id="one3">
+            上午8:13
+        </div>
+        </div>
+        </a>
+    <hr>
+    <a href="#">
+    <div class="one" id="two" onclick="two()">
+        <div class="img1">
+            <img id="pic2" src="img/2.jpg" alt="">
+        </div>
+        <div class="dialog">
+            <h1 id="two1">亲亲宝贝(家人群)</h1>
+            <span id="two2">大哥:吃饭了吗？</span>
+        </div>
+        <div class="time" id="two3">
+            上午8:20
+        </div>
+    </div>
+    </a>
+    <hr>
+    <a href="#">
+    <div class="one" id="three" onclick="three()">
+        <div class="img1">
+            <img id="pic3" src="img/3.jpg" alt="">
+        </div>
+        <div class="dialog">
+            <h1 id="three1">15级 工程制图</h1>
+            <span id="three2">张浩:老师饶命啊，多给点平时成绩！</span>
+        </div>
+        <div class="time" id="three3">
+            上午9:58
+        </div>
+    </div>
+    </a>
+    <hr>
+    <a href="#">
+    <div class="one" id="four" onclick="four()">
+        <div class="img1">
+            <img id="pic4" src="img/4.jpeg" alt="">
+        </div>
+        <div class="dialog">
+            <h1 id="four1">高中-吴磊</h1>
+            <span  id="four2">下午有时间吗？一起玩去！</span>
+        </div>
+        <div class="time"  id="four3">
+            上午10:53
+        </div>
+    </div>
+    </a>
+    <hr>
+    <a href="#">
+    <div class="one" id="five" onclick="five()">
+        <div class="img1">
+            <img id="pic6" src="img/6.jpeg" alt="">
+        </div>
+        <div class="dialog">
+            <h1 id="five1">大班长-胡静</h1>
+            <span id="five2">下午3:40开班会，不能到先联系我</span>
+        </div>
+        <div class="time" id="five3">
+            中午12:33
+        </div>
+    </div>
+    </a>
+    <hr>
+    <a href="#">
+            <div class="one" id="six" onclick="six()">
+                <div class="img1">
+                    <img id="pic5" src="img/5.jpg" alt="">
+                </div>
+                <div class="dialog">
+                    <h1 id="six1">表妹-康佳</h1>
+                    <span id="six2">我今天晚上去你那吃饭！</span>
+                </div>
+                <div class="time" id="six3">
+                    下午2:33
+                </div>
+            </div>
+            </a>
+    <footer>
+        <ul>
+                <a href="#">
+            <li>
+                <img class="bottom1"src="img/11.png" alt="">
+                <span class="bottom2">微信</span>
+            </li>
+            </a>
+            <a href="#">
+            <li>
+                <img class="bottom1"src="img/12.png" alt="">
+                <span class="bottom2">通讯录</span>
+            </li>
+            </a>
+            <a href="#">
+            <li>
+                <img class="bottom1"src="img/13.png" alt="">
+                <span class="bottom2">发现</span>
+            </li>
+            </a>
+            <a href="#">
+            <li>
+                <img class="bottom1"src="img/14.png" alt="">
+                <span class="bottom2">我的</span>
+            </li>
+            </a>
+        </ul>
+    </footer>
+</div>
+</body>
+<script>
+    var one1=document.getElementById("one1").innerHTML;
+    var one2=document.getElementById("one2").innerHTML;
+    var one3=document.getElementById("one3").innerHTML;
+    var two1=document.getElementById("two1").innerHTML;
+    var two2=document.getElementById("two2").innerHTML;
+    var two3=document.getElementById("two3").innerHTML;
+    var three1=document.getElementById("three1").innerHTML;
+    var three2=document.getElementById("three2").innerHTML;
+    var three3=document.getElementById("three3").innerHTML;
+    var four1=document.getElementById("four1").innerHTML;
+    var four2=document.getElementById("four2").innerHTML;
+    var four3=document.getElementById("four3").innerHTML;
+    var five1=document.getElementById("five1").innerHTML;
+    var five2=document.getElementById("five2").innerHTML;
+    var five3=document.getElementById("five3").innerHTML;
+    var six1=document.getElementById("six1").innerHTML;
+    var six2=document.getElementById("six2").innerHTML;
+    var six3=document.getElementById("six3").innerHTML;
+    var pic1=document.getElementById("pic1").src;
+    var pic2=document.getElementById("pic2").src;
+    var pic3=document.getElementById("pic3").src;
+    var pic4=document.getElementById("pic4").src;
+    var pic5=document.getElementById("pic5").src;
+    var pic6=document.getElementById("pic6").src;
+    function one(){
+        console.log(one1);
+        console.log(one2);
+        console.log(one3);
+    }
+    function two(){
+        console.log(two1);
+        console.log(two2);
+        console.log(two3);
+    }
+    function three(){
+        console.log(three1);
+        console.log(three2);
+        console.log(three3);
+    }
+    function four(){
+        console.log(four1);
+        console.log(four2);
+        console.log(four3);
+    }
+    function five(){
+        console.log(five1);
+        console.log(five2);
+        console.log(five3);
+    }
+    function six(){
+        console.log(six1);
+        console.log(six2);
+        console.log(six3);
+    }
+    var p21=[one1,two1,three1,four1,five1,six1];
+    console.log(p21);
+    var p22=p21.map((item,idx)=>{
+        return idx+"_"+item;
+    })
+    console.log(p22);
+
+
+
+
+
+
+
+    class Msg1{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getOneImg(){
+            return this.img;
+        }
+        setOneImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getOneTitle(){
+            return this.title;
+        }
+        setOneTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getOneDsp(){
+            return this.description;
+        }
+        setOneDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getOneTime(){
+            return this.time;
+        }
+        setOneTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+
+
+
+    class Msg2{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getTwoImg(){
+            return this.img;
+        }
+        setTwoImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getTwoTitle(){
+            return this.title;
+        }
+        setTwoTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getTwoDsp(){
+            return this.description;
+        }
+        setTwoDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getTwoTime(){
+            return this.time;
+        }
+        setTwoTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+
+
+
+
+    class Msg3{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getThreeImg(){
+            return this.img;
+        }
+        setThreeImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getThreeTitle(){
+            return this.title;
+        }
+        setThreeTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getThreeDsp(){
+            return this.description;
+        }
+        setThreeDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getThreeTime(){
+            return this.time;
+        }
+        setThreeTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    class Msg4{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getFourImg(){
+            return this.img;
+        }
+        setFourImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getFourTitle(){
+            return this.title;
+        }
+        setFourTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getFourDsp(){
+            return this.description;
+        }
+        setFourDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getFourTime(){
+            return this.time;
+        }
+        setFourTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    class Msg5{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getFiveImg(){
+            return this.img;
+        }
+        setFiveImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getFiveTitle(){
+            return this.title;
+        }
+        setFiveTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getFiveDsp(){
+            return this.description;
+        }
+        setFiveDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getFiveTime(){
+            return this.time;
+        }
+        setFiveTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+    class Msg6{
+        constructor(img,title,description,time){
+            this.img=img;
+            this.title=title;
+            this.description=description;
+            this.time=time;
+        }
+        getSixImg(){
+            return this.img;
+        }
+        setSixImg(img){
+            this.img = img;
+            return this.img;
+        }
+        getSixTitle(){
+            return this.title;
+        }
+        setSixTitle(title){
+            this.title=title;
+            return this.title;
+        }
+        getSixDsp(){
+            return this.description;
+        }
+        setSixDsp(description){
+            this.description=description;
+            return this.description;
+        }
+        getSixTime(){
+            return this.time;
+        }
+        setSixTime(time){
+            this.time=time;
+            return this.time;
+        }
+    }
+
+
+
+
+    let a1=new Msg1();
+    a1.setOneImg(pic1);
+    a1.setOneTitle(one1);
+    a1.setOneDsp(one2);
+    a1.setOneTime(one3);
+    // console.log(a1.setOneImg(pic1));
+    var img1=a1.img;
+    var title1=a1.title;
+    var dialog1=a1.description;
+    var time1=a1.time;
+    // console.log(time1);
+    var aok={img:img1,title:title1,dialog:dialog1,Time:time1};
+    console.log(aok);
+
+
+
+
+
+
+    let a2=new Msg2();
+    a2.setTwoImg(pic2);
+    a2.setTwoTitle(two1);
+    a2.setTwoDsp(two2);
+    a2.setTwoTime(two3);
+    // console.log(a1.setOneImg(pic1));
+    var img2=a2.img;
+    var title2=a2.title;
+    var dialog2=a2.description;
+    var time2=a2.time;
+    // console.log(time1);
+    var aok={img:img2,title:title2,dialog:dialog2,Time:time2};
+    console.log(aok);
+   
+   
+
+
+
+
+
+    let a3=new Msg3();
+    a3.setThreeImg(pic3);
+    a3.setThreeTitle(three1);
+    a3.setThreeDsp(three2);
+    a3.setThreeTime(three3);
+    // console.log(a1.setOneImg(pic1));
+    var img3=a3.img;
+    var title3=a3.title;
+    var dialog3=a3.description;
+    var time3=a3.time;
+    // console.log(time1);
+    var aok={img:img3,title:title3,dialog:dialog3,Time:time3};
+    console.log(aok);
+
+
+    let a4=new Msg4();
+    a4.setFourImg(pic4);
+    a4.setFourTitle(four1);
+    a4.setFourDsp(four2);
+    a4.setFourTime(four3);
+    // console.log(a1.setOneImg(pic1));
+    var img4=a4.img;
+    var title4=a4.title;
+    var dialog4=a4.description;
+    var time4=a4.time;
+    // console.log(time1);
+    var aok={img:img4,title:title4,dialog:dialog4,Time:time4};
+    console.log(aok);
+
+
+
+    let a5=new Msg5();
+    a5.setFiveImg(pic5);
+    a5.setFiveTitle(five1);
+    a5.setFiveDsp(five2);
+    a5.setFiveTime(five3);
+    // console.log(a1.setOneImg(pic1));
+    var img5=a5.img;
+    var title5=a5.title;
+    var dialog5=a5.description;
+    var time5=a5.time;
+    // console.log(time1);
+    var aok={img:img5,title:title5,dialog:dialog5,Time:time5};
+    console.log(aok);
+
+
+
+
+    let a6=new Msg6();
+    a6.setSixImg(pic6);
+    a6.setSixTitle(six1);
+    a6.setSixDsp(six2);
+    a6.setSixTime(six3);
+    // console.log(a1.setOneImg(pic1));
+    var img6=a6.img;
+    var title6=a6.title;
+    var dialog6=a6.description;
+    var time6=a6.time;
+    // console.log(time1);
+    var aok={img:img6,title:title6,dialog:dialog6,Time:time6};
+    console.log(aok);
+</script>
+</html>
