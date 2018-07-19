@@ -1,189 +1,151 @@
-import React, { Component } from 'react';
-import MessageItemView from './header.js';
-import ZhutiView from './Zhuti.js';
-import Footerview from './Footer.js';
+import React from 'react';
+import MessageItemView from './components/MessageItem.js';
+import DialogView from './components/DialogView.js';
+import HeaderItem from './components/Header.js';
+import Dialogjiahao from './components/Dialogjiahao.js';
 import './App.css';
 
+// const icon = require('./resource/icon_Good_B-2.png');
 
-  const icon1=require('./img/21.png')      
-  const icon2=require('./img/22.png')
-  const icon3=require('./img/1.jpg')
-  const icon4=require('./img/2.jpg')
-  const icon5=require('./img/3.jpg')
-  const icon6=require('./img/4.jpeg')
-  const icon7=require('./img/5.jpg')
-  const icon8=require('./img/6.jpeg')
-  const icon9=require('./img/11.png')
-  const icon10=require('./img/12.png')
-  const icon11=require('./img/13.png')
-  const icon12=require('./img/14.png')
+import icon from './resource/icon_Good_B-2.png';
+import icon1 from './resource/jiahao.jpg';
 
+class App extends React.Component {
 
+  constructor(props){
+    super(props);
 
+    this.state = {
 
-
-
-  class App extends Component {
-    constructor(props){
-      super(props);
-      this.state={
-
-
-
-
-        top:[
-            {
-                content:'微信(5)',
-            },
-            {
-                icon:icon1,
-            },
-            {
-                icon:icon2,
-            }
-        ],
-    
-
-
-
-
-        message:[
-          {
-            icon : icon3,
-            name : '小年糕前端训练营',
-            description : '靳博宇:好的好的，知道了！',
-            time : '上午8:13' 
-          },
-          {
-            icon : icon4,
-            name : '亲亲宝贝(家人群)',
-            description : '大哥:吃饭了吗？',
-            time : '上午8:20' 
-          },
-          {
-            icon : icon5,
-            name : '15级 工程制图',
-            description : '张浩:老师饶命啊，多给点平时成绩！',
-            time : '上午9:58' 
-          },
-          {
-            icon : icon6,
-            name : '高中-吴磊',
-            description : '下午有时间吗？一起玩去！',
-            time : '上午10:53' 
-          },
-          {
-            icon : icon7,
-            name : '大班长-胡静',
-            description : '下午3:40开班会，不能到先联系我',
-            time : '中午12:33' 
-          },
-          {
-            icon : icon7,
-            name : '表妹-康佳',
-            description : '我今天晚上去你那吃饭！',
-            time : '下午2:33' 
-          },
-        ],
-
-
-
-        
-        nav:[
-          {
-            icon : icon9,
-            title : '微信'
-          },
-          {
-            icon : icon10,
-            title : '通讯录'
-          },
-          {
-            icon : icon11,
-            title : '发现'
-          },
-          {
-            icon : icon12,
-            title : '我'
-          }
-        ],
-        showDailog : false
+      header:[
+        {
+        content:'微信',
+        icon:icon1,
       }
-    }
+    ],
 
-
-
-
-
-
-
-
-
-
-    
-    onItemClick=(message)=>{
-      console.log(message);
-      this.setState({
-        showDailog:true  //控制DialogView的显示
-      })
-    }
-
-
-
-
-
-
-
-
-
-
-
-    renderHeader=()=>{
-        const topmsg=this.state.top.map((item,idx)=>{
-            return <MessageItemView key={idx} item={item} onClick={this.onItemClick}/>
-          });
-          return topmsg;
+      messages: [
+        {
+          icon: icon,
+          title: '小年糕',
+          descript: 'hello 小年糕',
+          time: '7-18 11:14',
+          another:'更多',
+        },
+        {
+          icon: icon,
+          title: '小板凳',
+          descript: 'hello 小板凳',
+          time: '7-18 11:15',
+          another:'更多',
+        },
+        {
+          icon: icon,
+          title: '小豆包',
+          descript: 'hi 小豆包',
+          time: '7-17 10:00',
+          another:'更多',
         }
-
-
-  
-    renderZhuti=()=>{
-      const zhutimsg=this.state.message.map((item,idx)=>{
-        return <ZhutiView key={idx} item={item} onClick={this.onItemClick}/>
-      });
-      return zhutimsg;
+      ],
+      isDialogActive: false,
+      istianjiaActive:false,
     }
+  }
+
+  onItemClick = (message) => {
+    console.log(message);
+  }
 
 
- 
-     renderFooter = () => {
-        const footermsg = this.state.nav.map((item,idx) => {
-          return <Footerview key={idx} item={item}  onClick={this.onItemClick}/>
-       });
-       return footermsg;
-     }
+
+
+  onheaderClick = () => {
+    this.setState({
+      istianjiaActive:true,
+    })
+  }
+
+  onguanbiClick=()=>{
+    this.setState({
+      istianjiaActive:false,
+    })
+  }
+
+
+
+
+
+  handleAddItem = () => {
+    const newMessages = this.state.messages.slice();
+    newMessages.unshift({
+      icon: icon,
+      title: 'zhanglinxue',
+      descript: '哎呦不错',
+      time: '20180719'
+    });
+    this.setState({
+      messages: newMessages
+    });
+  }
+
+
+
+  handleShowDialog = isActive => {
+    this.setState({ isDialogActive: isActive });
+  }
+
+
+
+  renderMessageList = () => {
+    const messageViews = this.state.messages.map((item,i) => {
+      return <MessageItemView key={i} item={item} onClick={this.onItemClick}/>
+    });
+    return messageViews;
+  }
+
+  renderHeaderList = () => {
+    const headerViews = this.state.header.map((item,i) => {
+      return <HeaderItem key={i} item={item} onClick={this.onheaderClick}/>
+    });
+    return headerViews;
+  }
+
+  renderDialogjiahao=()=>{
+    const jiahaoViews = this.state.header.map((item,i) => {
+      return <Dialogjiahao key={i} item={item} onClick={this.onguanbiClick}/>
+    });
+    return jiahaoViews;
+  }
 
 
   render() {
     return (
-        <div id="one333">
-            <header>
-                {
-                    this.renderHeader()
-                }
-            </header>
-            {
-                this.renderZhuti()
-            }
-            <footer>
-            {
-                this.renderFooter()
-            }
-            </footer>
-        </div>
+      <div>
+        { this.renderHeaderList()}
+        { this.renderMessageList() }
+        <nav className="chat-nav">
+          <div className="chat-nav__item" onClick={this.handleAddItem}>
+            <img className="chat-nav__item__icon" src={icon} alt="" />
+            <div className="chat-nav__item__name">微信</div>
+          </div>
+          <div className="chat-nav__item">
+            <img className="chat-nav__item__icon" src={icon} alt="" />
+            <div className="chat-nav__item__name">通讯录</div>
+          </div>
+          <div className="chat-nav__item">
+            <img className="chat-nav__item__icon" src={icon} alt="" />
+            <div className="chat-nav__item__name">发现</div>
+          </div>
+          <div className="chat-nav__item" onClick={this.handleShowDialog.bind(this, true)}>
+            <img className="chat-nav__item__icon" src={icon} alt="" />
+            <div className="chat-nav__item__name">我</div>
+          </div>
+        </nav>
+        <DialogView isActive={this.state.isDialogActive} onCloseClick={this.handleShowDialog} />
+        <Dialogjiahao isActive={this.state.istianjiaActive} onCloseClick={this.guanbi} />
+      </div>
     );
   }
-  
 }
 
 export default App;
