@@ -3,6 +3,18 @@ import './Dialogjiahao.css';
 
 export default class Dialogjiahao extends Component {
  
+
+
+
+  
+  tianjia= () => {
+    const { onClick, item } = this.props;
+    console.log("123");
+    if (onClick) {
+      onClick(item);
+    }
+  }
+
   render() {
     console.log('component render');
     const { isActive } = this.props;
@@ -11,10 +23,9 @@ export default class Dialogjiahao extends Component {
       return null;
     }
 
-    
     return (
       <div className="jiahao-main">
-       <div className="jiahao-close" >close</div>
+       <div className="jiahao-close"  onClick={this.tianjia.bind(this, true)}  >close</div>
           <div className="jiahao-one">
               <div className="jiahao-content">
                
