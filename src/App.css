@@ -1,180 +1,83 @@
-body {
-  margin: 0;
+*{
+  margin:0;
+  padding:0;
 }
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.main{
+  width:400px;
+  height:600px;
+  border:1px red solid;
+  margin:10px auto;
+  position:relative;
+  
 }
-h2 {
-  margin: 0;
+.message-ul{
+  /* background:#ddd; */
+  list-style-type:none;
+ 
 }
-
-
-.chat-list {
-  padding-left: 10px;
-  border-bottom: 1px solid #eee;
+.message-li{
+  height:80px;
+  display:block;
+  width:400px;
+  border-bottom:1px #ccc solid;
 }
-.chat-list__item {
-  clear:both;
-  display: flex;
-  padding: 10px;
-  padding-left: 0;
-  border-top: 1px solid #eee;
+.message-li .pic{
+  border-radius: 50%;
+  width:30px;
+  height:30px;
+  /* border:1px green solid; */
+  display:inline-block;
+  margin:0 15px;
+  background-image: url(./resource/xiaoduihao.png) 
 }
-/*.chat-list__item::before {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: #eee;
-  transform: scaleY(0.5);
-}*/
-.chat-list__item__avatar {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-}
-.chat-list__item__content {
-  flex: 1;
-}
-.chat-list__item__content__topBar {
-  overflow: hidden;
-  line-height: 32px;
-}
-.chat-list__item__content__title {
-  float: left;
-  font-size: 16px;
-}
-.chat-list__item__content__time {
-  float: right;
-  font-size: 12px;
-  color: #aaa;
-}
-.chat-list__item__content__recentMsg {
-  font-size: 14px;
-  color: #aaa;
-}
-.chat-list__item__content__gengduo{
-  float:right;
-  border:1px black solid;
-}
-.chat-nav {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-}
-.chat-nav__item {
-  flex: 1;
-  padding: 5px;
-  text-align: center;
-}
-.chat-nav__item__icon {
-  display: block;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
-}
-.chat-nav__item__name {
-  font-size: 12px;
-  color: #aaa;
-}
-.header{
-  flex: 1;
-}
-.text{
+.message-li .text{
   float:left;
   font-size:20px;
-  margin-top:15px;
-  margin-left:15px;
+  margin-top:26px;
+  margin-left:23px;
 }
-.pic{
-  position:relative;
-  float:right;
-  /* margin-right:5px; */
-  font-size:50px;
-  bottom:7px;
-  right:11px;
-}
-
-
-
-
-.DialogView {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-
-
-.ViewContent {
-  width: 300px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.confirmBtn {
-  text-align: right;
-  margin-top: 10px;
-  color: #ffffff;
-  padding: 5px 20px;
-  background-color: #000000;
-}
-
-.ViewContent {
-  width: 300px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.confirmBtn {
-  text-align: right;
-  margin-top: 10px;
-  color: #ffffff;
-  padding: 5px 20px;
-  background-color: #000000;
-}
-
-.confirmBtn {
-  text-align: right;
-  margin-top: 10px;
-  color: #ffffff;
-  padding: 5px 20px;
-  background-color: #000000;
-}
-.closeBtn{
-  width:60px;
-  height:30px;
-  font-size:20px;
-  background:#eee;
+.content{
   text-align:center;
   float:right;
-  margin-top:30px;
-  margin-right:30px;
+  width:300px;
+  /* border:1px black solid; */
+  margin-top:24px;
 }
+.message-li .one{
+  background-color:red;
+}
+.message-li .two{
+  background-color:rgb(88, 12, 107);
+}
+.message-li .three{
+  background-color:rgb(0, 255, 98);
+}
+.message-li .four{
+  background-color:rgb(229, 255, 0);
+}
+.footer{
+  position:absolute;
+  width:400px;
+  height:120px;
+  /* border:1px black solid; */
+  bottom:0;
+  text-align: center;
+  background-color:#ddd;
+}
+.footer-content{
+  width:60px;
+  height:60px;
+  /* border:1px red solid; */
+  display: inline-block;
+  margin:0 15px;
+  
+}
+.footer-content img{
+  display:block;
+  width:60px;
+  height:60px;
+  margin:10px 0;
+} 
+.footer-content span{
+  display:block;
+} 
