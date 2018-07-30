@@ -1,23 +1,28 @@
-import React from 'react';
-import Todo from './container/Todo';
+import React,{Component} from 'react';
 import './App.css';
-import { createStore,applyMiddleware,compose } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer  from './reducers'
-import { createLogger } from 'redux-logger';
-const logger = createLogger();
+import Todo from './container/todo'
+
+
+import rootReducer from './reducers';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+
+
+
 const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(logger),
+    rootReducer,
   )
-)
-export default class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Todo />
-      </Provider>
-    )
-  }
+export default class app extends Component{
+
+    render (){
+        return(
+
+            
+            <Provider store={store}>
+            <Todo />
+            </Provider>
+            
+
+        )
+    }
 }

@@ -1,38 +1,148 @@
-import React from 'react';
-import AddTodo from '../components/AddTodo';
-import TodoList from '../components/TodoList';
-import Filter from '../components/Filter';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as todoActionCreators from '../actions';
-class Todo extends React.Component {
-  constructor() {
-    super();
-  }
-  getFilterList = list => {
-    return list.filter(item => item.isCompleted)
-  }
-  render() {
-    const { todoActions } = this.props;
-    const { allList, compList } = this.props;
-    return (
-      <div className="todo-ctn">
-        <AddTodo todoActions={todoActions} />
-        {/* <TodoList list={allList.list} todoActions={todoActions}/>
-        <hr />
-        <TodoList list={compList.list} todoActions={todoActions}/> */}
-      </div>
-    );
-  }
+import React, { Component } from 'react';
+import Headerview from '../components/Headerview'
+import Titleview from '../components/titleview'
+import Buttonview from '../components/Buttonview'
+import Tableview from '../components/Tableview'
+import 'antd/dist/antd.css'
+import {connect} from 'react-redux';
+
+
+
+
+class todo extends Component{
+    
+    render(){
+        return(
+            <div>
+                <Headerview state={this.props} dispatch={this.props.dispatch}/>
+                <Titleview state={this.props} dispatch={this.props.dispatch}/>
+                {/* <Ideaview state={this.props} dispatch={this.props.dispatch}/> */}
+                <Buttonview  state={this.props} dispatch={this.props.dispatch}/>
+                <Tableview state={this.props} dispatch={this.props.dispatch}/>
+            </div>
+        )
+    }
 }
+
 function mapStateToProps(state,ownProps){
-  // state.list;
-  const { allList, compList } = state;
-  return { allList, compList };
+    const props=state;
+    return props;
 }
-function mapDispatchToProps(dispatch){
-  return {
-    todoActions: bindActionCreators(todoActionCreators, dispatch)
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps)(todo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const icon = require('../resource/icon.png')
+// export default class todo extends Component {
+//     constructor() {
+//         super();
+//         this.state = {
+//             botview: [
+//                 {
+//                     icon: icon,
+//                     title: '微信',
+//                 },
+//                 {
+//                     icon: icon,
+//                     title: '通讯录',
+//                 },
+//                 {
+//                     icon: icon,
+//                     title: '发现',
+//                 },
+//                 {
+//                     icon: icon,
+//                     title: '我',
+//                 },
+//             ],
+//             messages: [
+//                 {
+//                     icon: icon,
+//                     title: '小年糕',
+//                     descript: 'hello 小年糕',
+//                     time: '7-18 11:14'
+//                 },
+//                 {
+//                     icon: icon,
+//                     title: '小板凳',
+//                     descript: 'hello 小板凳',
+//                     time: '7-18 11:15',
+//                 },
+//                 {
+//                     icon: icon,
+//                     title: '小豆包',
+//                     descript: 'hi 小豆包',
+//                     time: '7-17 10:00',
+//                 }
+//             ], 
+//             isActive:false,
+//             idx:null,
+//         }
+//     }
+//     moreLick=(item)=>{
+//         this.setState({
+//             isActive:item.isActive,
+//             idx:item.idx,
+//         })
+//     }
+//     topdialog=(item)=>{
+//         const newmessage=this.state.messages.slice();
+//         const topmessage=newmessage[this.state.idx];
+//         newmessage.splice(this.state.idx,1);
+//         newmessage.unshift(topmessage);
+//         this.setState({
+
+//             isActive:item.isActive,
+//             messages:newmessage,
+//         })
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <Topbar />
+//                 <Message messages={this.state.messages}  isActive={this.state.isActive} moreLick={this.moreLick}/>
+//                 <Dialog  isActive={this.state.isActive} topdialog={this.topdialog}/>
+//                 <Botbar botview={this.state.botview}/>
+//             </div>
+//         )
+//     }
+// }

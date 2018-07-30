@@ -1,0 +1,47 @@
+import * as actionTypes from '../const/actionTypes'
+
+
+export function moreButton( isActive, idx){
+    return{
+        type:actionTypes.SHOE_Dialog,
+        isActive,
+        idx
+    }
+}
+
+
+export function topMessage( isActive, idx){
+    
+    return{
+        type:actionTypes.TOPMESSAGE,
+        isActive,
+        idx
+    }
+}
+
+
+
+
+export function delMessage( isActive, idx){
+    
+    return{
+        type:actionTypes.DELMESSAGE,
+        isActive,
+        idx
+    }
+}
+
+
+export function changIdea( isActive, idx){
+    
+    return{
+        type:actionTypes.IDEA,
+        isActive,
+        idx
+    }
+}
+
+
+
+
+
