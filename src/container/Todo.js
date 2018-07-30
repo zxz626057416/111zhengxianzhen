@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Headerview from '../components/Headerview'
 import Titleview from '../components/titleview'
-import Buttonview from '../components/Buttonview'
-import Tableview from '../components/Tableview'
 import 'antd/dist/antd.css'
 import {connect} from 'react-redux';
 
@@ -16,8 +14,6 @@ class todo extends Component{
             <div>
                 <Headerview state={this.props} dispatch={this.props.dispatch}/>
                 <Titleview state={this.props} dispatch={this.props.dispatch}/>       
-                <Buttonview  state={this.props} dispatch={this.props.dispatch}/>
-                <Tableview state={this.props} dispatch={this.props.dispatch}/>
             </div>
         )
     }
