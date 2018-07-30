@@ -32,12 +32,19 @@ export function delMessage( isActive, idx){
 }
 
 
-export function changIdea( isActive, idx){
+export function changeidea( isActive, idx){
     
     return{
         type:actionTypes.IDEA,
         isActive,
-        idx
+    }
+}
+
+export function changeclass( isActive, idx){
+    
+    return{
+        type:actionTypes.CLASS,
+        isActive,
     }
 }
 

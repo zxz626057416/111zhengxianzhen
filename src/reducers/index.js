@@ -317,15 +317,21 @@ const init_state = {
 export default function TodoList(state = init_state, action) {
 
   switch (action.type) {
-    case actionTypes.SHOE_Dialog:
-    
-    const newState = { ...state };
-    newState.isDialog = false;
-    
-    return newState;
+    case actionTypes.IDEA:
+    const newState1 = { ...state };
+    newState1.isActive = false;
+    return newState1;  
+   
+
+   
+    case actionTypes.CLASS:
+    const newState2 = { ...state };
+    newState2.isActive = true;
+    return newState2; 
 
 
     default:
       return state;
   }
 }
+

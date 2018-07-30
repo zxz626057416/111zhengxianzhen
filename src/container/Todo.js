@@ -15,8 +15,7 @@ class todo extends Component{
         return(
             <div>
                 <Headerview state={this.props} dispatch={this.props.dispatch}/>
-                <Titleview state={this.props} dispatch={this.props.dispatch}/>
-                {/* <Ideaview state={this.props} dispatch={this.props.dispatch}/> */}
+                <Titleview state={this.props} dispatch={this.props.dispatch}/>       
                 <Buttonview  state={this.props} dispatch={this.props.dispatch}/>
                 <Tableview state={this.props} dispatch={this.props.dispatch}/>
             </div>
