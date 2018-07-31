@@ -39,7 +39,7 @@
 }
 
 .header_main .text3{
-  width:200px;
+  /* width:200px; */
   height:100px;
   float:left;
   /* border:1px red solid; */
@@ -49,11 +49,8 @@
 .header_main .left{
   float:left;
 }
-.header_main .one{
-  width:50px;
-}
+
 button,input{
-  width:50px;
   float:right;
 }
 .class{
@@ -136,7 +133,12 @@ button,input{
 .buttonview-button .sy .gray{
   background:#aaa;
 }
-
+.Red{
+  color:red;
+}
+.Orange{
+  color:orange;
+}
 
 
 

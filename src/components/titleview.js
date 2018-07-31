@@ -24,7 +24,7 @@ class Titleview extends Component {
 
     render(){
 
-        const {state,dispatch}=this.props;
+        // const {state,dispatch}=this.props;
 
         const TabPane = Tabs.TabPane;
         
@@ -42,12 +42,6 @@ class Titleview extends Component {
         )
         
     }
-
-
-  
-
-
-
 
 }
 function mapStateToProps(state, ownProps) {

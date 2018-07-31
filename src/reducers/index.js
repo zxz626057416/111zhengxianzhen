@@ -1,10 +1,11 @@
 import * as actionTypes from '../const/actionTypes'
+import tablelist from './tablelist'
 import icon from '../resource/icon.png'
-// import {DIALOG_SHOW_STATUS} from '../const/dialog_show_state'
+import * as api from '../api';
+
+console.log(this.data);
+
 const init_state = {
-
-
-
 
   dataSource: [
     {
@@ -14,7 +15,7 @@ const init_state = {
       opentime: '2017-04-20',
       teacher: '小白老师',
       shangkelv: '3/21',
-      homework: '67.98%',
+      homework: '88.98%',
       dianping: '87.98%',
       daka: '3/21',
       manyidu: '90.14%',
@@ -68,106 +69,6 @@ const init_state = {
       manyidu: '94.10%',
     },
   ],
-
-
-
-  ccolumns: [
-    {
-      title: '班级',
-      dataIndex: 'class',
-      key: 'class',
-    },
-    {
-      title: '状态',
-      dataIndex: 'state',
-      key: 'state',
-    },
-    {
-      title: '开课时间',
-      dataIndex: 'opentime',
-      key: 'opentime',
-    },
-    {
-      title: '老师',
-      dataIndex: 'teacher',
-      key: 'teacher',
-    },
-    {
-      title: '上课率',
-      dataIndex: 'shangkelv',
-      key: 'shangkelv',
-    },
-    {
-      title: '作业提交率',
-      dataIndex: 'homework',
-      key: 'homework',
-    },
-    {
-      title: '被点评情况',
-      dataIndex: 'dianping',
-      key: 'dianping',
-    },
-    {
-      title: '打卡率',
-      dataIndex: 'daka',
-      key: 'daka',
-    },
-    {
-      title: '满意度',
-      dataIndex: 'manyidu',
-      key: 'manyidu',
-    },
-  ],
-
-
-  ccolumns1: [
-    {
-      title: '班级',
-      dataIndex: 'class',
-      key: 'class',
-    },
-    {
-      title: '状态',
-      dataIndex: 'state',
-      key: 'state',
-    },
-    {
-      title: '开课时间',
-      dataIndex: 'opentime',
-      key: 'opentime',
-    },
-    {
-      title: '教学组负责人',
-      dataIndex: 'teacher',
-      key: 'teacher',
-    },
-    {
-      title: '上课率',
-      dataIndex: 'shangkelv',
-      key: 'shangkelv',
-    },
-    {
-      title: '作业提交率',
-      dataIndex: 'homework',
-      key: 'homework',
-    },
-    {
-      title: '被点评情况',
-      dataIndex: 'dianping',
-      key: 'dianping',
-    },
-    {
-      title: '打卡率',
-      dataIndex: 'daka',
-      key: 'daka',
-    },
-    {
-      title: '满意度',
-      dataIndex: 'manyidu',
-      key: 'manyidu',
-    },
-  ],
-
   dataSource1: [
     {
       key: '1',
@@ -196,10 +97,6 @@ const init_state = {
       content: '入学时间：'
     },
   ],
-
-
-
-
   text1_2: [
     {
       content: 'MID33900056321'
@@ -211,12 +108,6 @@ const init_state = {
       content: '2018-10-30'
     },
   ],
-
-
-
-
-
-
   text2_1: [
     {
       content: '历史付费：'
@@ -228,12 +119,6 @@ const init_state = {
       content: '最后登录时间：'
     },
   ],
-
-
-
-
-
-
   text2_2: [
     {
       content: '987'
@@ -245,9 +130,6 @@ const init_state = {
       content: '2018-10-30'
     },
   ],
-
-
-
   text3_1: [
     {
       content: '手机号码：'
@@ -259,19 +141,12 @@ const init_state = {
       content: '备注：'
     },
   ],
-
-
-
   text3_2: [
     {
       content: '12345678910'
     },
 
   ],
-
-
-
-
   messages: [
     {
       icon: icon,
@@ -314,20 +189,20 @@ const init_state = {
   idx: null,
 }
 
+
+
+
 export default function TodoList(state = init_state, action) {
 
+
   switch (action.type) {
+
     case actionTypes.IDEA:
     const newState1 = { ...state };
     newState1.isActive = false;
-    return newState1;  
-   
+    return newState1;
 
-   
-    case actionTypes.CLASS:
-    const newState2 = { ...state };
-    newState2.isActive = true;
-    return newState2; 
+
 
 
     default:

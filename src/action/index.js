@@ -1,5 +1,5 @@
 import * as actionTypes from '../const/actionTypes'
-
+import axios from 'axios';
 
 export function moreButton( isActive, idx){
     return{
@@ -8,8 +8,6 @@ export function moreButton( isActive, idx){
         idx
     }
 }
-
-
 export function topMessage( isActive, idx){
     
     return{
@@ -18,10 +16,6 @@ export function topMessage( isActive, idx){
         idx
     }
 }
-
-
-
-
 export function delMessage( isActive, idx){
     
     return{
@@ -30,8 +24,6 @@ export function delMessage( isActive, idx){
         idx
     }
 }
-
-
 export function changeidea( isActive, idx){
     
     return{
@@ -39,8 +31,7 @@ export function changeidea( isActive, idx){
         isActive,
     }
 }
-
-export function changeclass( isActive, idx){
+export function changeclass(isActive, idx){
     
     return{
         type:actionTypes.CLASS,

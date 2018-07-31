@@ -3,15 +3,16 @@ import { connect } from 'react-redux';
 import { Avatar } from 'antd';
 import { Input } from 'antd';
 import { Button } from 'antd';
+const Search = Input.Search;
 class Headerview extends Component {
     renderText1_1 = () => {
         const { state } = this.props;
-      
+
         let msg = state.text1_1.map((item, idx) => {
             return (
-                
-                    <div className="text1-1">{item.content}</div>
-               
+
+                <div className="text1-1">{item.content}</div>
+
             )
         })
         return msg;
@@ -20,9 +21,9 @@ class Headerview extends Component {
         const { state } = this.props;
         let msg = state.text1_2.map((item, idx) => {
             return (
-                
-                    <div className="text1-2">{item.content}</div>
-               
+
+                <div className="text1-2">{item.content}</div>
+
             )
         })
         return msg;
@@ -31,9 +32,9 @@ class Headerview extends Component {
         const { state } = this.props;
         let msg = state.text2_1.map((item, idx) => {
             return (
-              
-                    <div className="text2-1">{item.content}</div>
-               
+
+                <div className="text2-1">{item.content}</div>
+
             )
         })
         return msg;
@@ -42,9 +43,9 @@ class Headerview extends Component {
         const { state } = this.props;
         let msg = state.text2_2.map((item, idx) => {
             return (
-               
-                    <div className="text2-2">{item.content}</div>
-               
+
+                <div className="text2-2">{item.content}</div>
+
             )
         })
         return msg;
@@ -53,10 +54,10 @@ class Headerview extends Component {
         const { state } = this.props;
         let msg = state.text3_1.map((item, idx) => {
             return (
-               
-                    <div className="text3-1">{item.content}</div>
 
-                
+                <div className="text3-1">{item.content}</div>
+
+
             )
         })
         return msg;
@@ -67,13 +68,38 @@ class Headerview extends Component {
             return (
                 <div>
                     <div className="text3-1">{item.content}</div>
-                    <div className="weixin"> 
-                        <div className="inline"><Input size="small" placeholder="small size" /></div>
-                        <div className="inline"><Button type="primary">Primary</Button></div>
+                    <div className="weixin">
+
+                        <Search
+                            placeholder=""
+                            enterButton="提交"
+                            size="large"
+                            onSearch={value => console.log(value)}
+                        />
+                        {/* <div className="inline"><Input size="small" placeholder="small size" /></div>
+                        <div className="inline"><Button type="primary">Primary</Button></div> */}
+
+
+
                     </div>
-                    <div className="beizhu"> 
-                        <div className="inline"><Input size="small" placeholder="small size" /></div>
-                        <div className="inline"><Button type="primary">Primary</Button></div>
+                    <div className="beizhu">
+
+                        <Search
+                            placeholder=""
+                            enterButton="提交"
+                            size="large"
+                            onSearch={value => console.log(value)}
+                        />
+
+
+                        
+
+                        {/* <div className="inline"><Input size="small" placeholder="small size" /></div>
+                        <div className="inline"><Button type="primary">Primary</Button></div> */}
+
+
+
+
                     </div>
                 </div>
             )

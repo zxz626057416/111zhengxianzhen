@@ -3,12 +3,24 @@ import Headerview from '../components/Headerview'
 import Titleview from '../components/titleview'
 import 'antd/dist/antd.css'
 import {connect} from 'react-redux';
-
-
-
+import * as api from '../api';
 
 class todo extends Component{
     
+
+
+
+
+    
+    componentDidMount(){
+        // const {dispatch}=this.props;
+        // api.getuser(don(dispatch));
+    }
+    
+
+
+
+
     render(){
         return(
             <div>
