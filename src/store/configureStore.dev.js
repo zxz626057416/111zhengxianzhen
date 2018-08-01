@@ -1,13 +1,14 @@
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
+
 import { createLogger } from 'redux-logger'
 import rootReducer from '../reducers'
+import serverApi from '../middleware/severApi';
 
 const configureStore = preloadedState => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk, createLogger())
+    applyMiddleware( serverApi, createLogger())
   )
 
   if (module.hot) {

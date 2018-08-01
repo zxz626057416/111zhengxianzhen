@@ -3,208 +3,72 @@ import tablelist from './tablelist'
 import icon from '../resource/icon.png'
 import * as api from '../api';
 
-console.log(this.data);
 
 const init_state = {
-
-  dataSource: [
-    {
-      key: '1',
-      class: '高级班',
-      state: '进行中',
-      opentime: '2017-04-20',
-      teacher: '小白老师',
-      shangkelv: '3/21',
-      homework: '88.98%',
-      dianping: '87.98%',
-      daka: '3/21',
-      manyidu: '90.14%',
-    },
-    {
-      key: '2',
-      class: '进阶班',
-      state: '进行中',
-      opentime: '2017-04-21',
-      teacher: '小白老师',
-      shangkelv: '5/21',
-      homework: '76.89%',
-      dianping: '31.87%',
-      daka: '5/21',
-      manyidu: '98.14%',
-    },
-    {
-      key: '3',
-      class: '提高班',
-      state: '进行中',
-      opentime: '2017-04-22',
-      teacher: '小白老师',
-      shangkelv: '13/21',
-      homework: '13.89%',
-      dianping: '21.76%',
-      daka: '13/21',
-      manyidu: '88.01%',
-    },
-    {
-      key: '4',
-      class: '入门班',
-      state: '进行中',
-      opentime: '2017-04-23',
-      teacher: '小白老师',
-      shangkelv: '20/21',
-      homework: '98.45%',
-      dianping: '98.67%',
-      daka: '20/21',
-      manyidu: '30.10%',
-    },
-    {
-      key: '5',
-      class: '体验班',
-      state: '进行中',
-      opentime: '2017-04-2',
-      teacher: '小白老师',
-      shangkelv: '21/21',
-      homework: '31.54%',
-      dianping: '78.76%',
-      daka: '21/21',
-      manyidu: '94.10%',
-    },
-  ],
-  dataSource1: [
-    {
-      key: '1',
-      class: '高级班',
-      state: '已结束',
-      opentime: '2017-04-30',
-      teacher: '小白老师',
-      shangkelv: '21/21',
-      homework: '8/10',
-      dianping: '10/10',
-      daka: '5/21',
-      manyidu: '90.00%',
-    }
-  ],
-
-
-
-  text1_1: [
-    {
-      content: '学员编号：'
-    },
-    {
-      content: '在学课程：'
-    },
-    {
-      content: '入学时间：'
-    },
-  ],
   text1_2: [
-    {
-      content: 'MID33900056321'
-    },
-    {
-      content: '摄影课，绘画课'
-    },
-    {
-      content: '2018-10-30'
-    },
-  ],
-  text2_1: [
-    {
-      content: '历史付费：'
-    },
-    {
-      content: '累计学习天数：'
-    },
-    {
-      content: '最后登录时间：'
-    },
+   123
   ],
   text2_2: [
-    {
-      content: '987'
-    },
-    {
-      content: '456'
-    },
-    {
-      content: '2018-10-30'
-    },
-  ],
-  text3_1: [
-    {
-      content: '手机号码：'
-    },
-    {
-      content: '微信号码：'
-    },
-    {
-      content: '备注：'
-    },
   ],
   text3_2: [
-    {
-      content: '12345678910'
-    },
-
   ],
-  messages: [
-    {
-      icon: icon,
-      title: '小年糕',
-      descript: 'hello 小年糕',
-      time: '7-18 11:14'
-    },
-    {
-      icon: icon,
-      title: '小板凳',
-      descript: 'hello 小板凳',
-      time: '7-18 11:15',
-    },
-    {
-      icon: icon,
-      title: '小豆包',
-      descript: 'hi 小豆包',
-      time: '7-17 10:00',
-    }
+  dataSource:[
   ],
-  botbar: [
-    {
-      icon: icon,
-      title: '微信',
-    },
-    {
-      icon: icon,
-      title: '通讯录',
-    },
-    {
-      icon: icon,
-      title: '发现',
-    },
-    {
-      icon: icon,
-      title: '我',
-    }
+  dataSource1:[
   ],
-  isActive: true,
-  idx: null,
 }
 
 
-
-
 export default function TodoList(state = init_state, action) {
-
-
   switch (action.type) {
+    case actionTypes.FETCH_USER_INFO_SUC:
+          console.log("123")
+          const newState1 = {...state};
+          const temp1=[
+            {content:action.data.mid},
+            {content:action.data.learningLesson},
+            {content:action.data.enterDate}
+          ]
+          const temp2=[
+            {content:action.data.history_pay
+            },
+            {content:action.data.totalLearningDays
+            },
+            {content:action.data.lastLoginDate
+            }
+          ]
+          const temp3=[
+            {content:action.data.tel
+            },
+          ]
+          newState1.text1_2=temp1
+          newState1.text2_2=temp2
+          newState1.text3_2=temp3
 
-    case actionTypes.IDEA:
-    const newState1 = { ...state };
-    newState1.isActive = false;
-    return newState1;
+          // console.log(newState1.text1_2)
+          // console.log(newState1.text1_2)
 
 
-
-
+          return newState1;
+          case actionTypes.FETCH_LESSON_INFO_SUC:
+          const newState2 = {...state};
+          const temp2_1=action.data.currentLessonsList
+          const temp2_2=action.data.historyLessonsList
+          const banji=action.data.currentLessonsList[0].classInfo.name
+          const laoshi=action.data.currentLessonsList[0].teacherInfo.nick
+          const banji1=action.data.currentLessonsList[1].classInfo.name
+          const laoshi1=action.data.currentLessonsList[1].teacherInfo.nick
+          const banji2_1=action.data.historyLessonsList[0].classInfo.name
+          const laoshi2_1=action.data.historyLessonsList[0].teacherInfo.nick
+          newState2.dataSource=temp2_1
+          newState2.dataSource1=temp2_2
+          newState2.dataSource[0].classInfo=banji
+          newState2.dataSource[0].teacherInfo=laoshi
+          newState2.dataSource[1].classInfo=banji1
+          newState2.dataSource[1].teacherInfo=laoshi1
+          newState2.dataSource1[0].classInfo=banji2_1
+          newState2.dataSource1[0].teacherInfo=laoshi2_1
+          return newState2;
     default:
       return state;
   }

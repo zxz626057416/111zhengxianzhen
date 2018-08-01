@@ -1,25 +1,11 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import {changeidea} from '../action'
-import {changeclass} from '../action'
 import Buttonview from '../components/Buttonview'
 import Tableview from '../components/Tableview'
 import { Tabs } from 'antd';
 
 class Titleview extends Component {
 
-
-    renderidea=()=>{
-       const {state,dispatch}=this.props;
-       const {isActive} = state.isActive;
-       dispatch(changeidea(isActive))
-    }
-
-    rendeclass=()=>{
-        const {state,dispatch}=this.props;
-       const {isActive} = state.isActive;
-       dispatch(changeclass(isActive))
-    }
 
 
     render(){

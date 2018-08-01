@@ -3,48 +3,33 @@ import React,{Component} from  'react'
  export const columns= [
     {
       title: '班级',
-      dataIndex: 'class',
-      key: 'class',
-
-
-      render:text=>{
-        let num=parseInt(text,10)   //将其解析成10进制
-        if (num<80){
-            return <span className="Red">{text}</span>
-        }
-        if (num>95){
-            return <span className="Orange">{text}</span>
-        }else{
-            return <span>{text}</span>
-        }
-    }
-
-
-
-
+      dataIndex: 'classInfo',
+      key: 'classInfo',
     },
     {
       title: '状态',
-      dataIndex: 'state',
-      key: 'state',
+      dataIndex: 'status',
+      key: 'status',
     },
     {
       title: '开课时间',
-      dataIndex: 'opentime',
-      key: 'opentime',
+      dataIndex: 'startTime',
+      key: 'startTime',
     },
     {
       title: '老师',
-      dataIndex: 'teacher',
-      key: 'teacher',
+      dataIndex: 'teacherInfo',
+      key: 'teacherInfo',
     },
     {
       title: '上课率',
-      dataIndex: 'shangkelv',
-      key: 'shangkelv',
-      render:text=>{
-        let num1=parseInt(text.split("/")[0],10)   
-        let num2=parseInt(text.split("/")[0],10);  
+      dataIndex: 'enterRate',
+      key: 'enterRate',
+
+
+        render:text=>{
+        let num1=parseFloat(text.split("/")[0],10)   
+        let num2=parseFloat(text.split("/")[1],10);  
         let num=num1/num2;
         if (num<0.8){
             return <span className="Red">{text}</span>
@@ -55,20 +40,24 @@ import React,{Component} from  'react'
             return <span>{text}</span>
         }
     }
+
+
+
+
     },
     {
       title: '作业提交率',
-      dataIndex: 'homework',
-      key: 'homework',
+      dataIndex: 'homeworkSubmitRate',
+      key: 'homeworkSubmitRate',
 
 
 
       render:text=>{
-        let num=parseInt(text,10)   //将其解析成10进制
-        if (num<80){
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
             return <span className="Red">{text}</span>
         }
-        if (num>95){
+        if (num>0.95){
             return <span className="Orange">{text}</span>
         }else{
             return <span>{text}</span>
@@ -79,29 +68,11 @@ import React,{Component} from  'react'
     },
     {
       title: '被点评情况',
-      dataIndex: 'dianping',
-      key: 'dianping',
+      dataIndex: 'beCommenttedRate',
+      key: 'beCommenttedRate',
 
       render:text=>{
-        let num=parseInt(text,10)   //将其解析成10进制
-        if (num<80){
-            return <span className="Red">{text}</span>
-        }
-        if (num>95){
-            return <span className="Orange">{text}</span>
-        }else{
-            return <span>{text}</span>
-        }
-    }
-    },
-    {
-      title: '打卡率',
-      dataIndex: 'daka',
-      key: 'daka',
-      render:text=>{
-        let num1=parseInt(text.split("/")[0],10)   
-        let num2=parseInt(text.split("/")[0],10);  
-        let num=num1/num2;
+        let num=parseFloat(text,10)   //将其解析成10进制
         if (num<0.8){
             return <span className="Red">{text}</span>
         }
@@ -110,19 +81,36 @@ import React,{Component} from  'react'
         }else{
             return <span>{text}</span>
         }
-    }}
+    }
+    },
+    {
+      title: '打卡率',
+      dataIndex: 'satisfyRate',
+      key: 'satisfyRate',
+      render:text=>{
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
+}
     ,
     {
       title: '满意度',
-      dataIndex: 'manyidu',
-      key: 'manyidu',
+      dataIndex: 'beCommenttedRate',
+      key: 'beCommenttedRate',
       
       render:text=>{
-        let num=parseInt(text,10)   //将其解析成10进制
-        if (num<80){
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
             return <span className="Red">{text}</span>
         }
-        if (num>95){
+        if (num>0.95){
             return <span className="Orange">{text}</span>
         }else{
             return <span>{text}</span>
@@ -138,50 +126,119 @@ import React,{Component} from  'react'
 
 
 
-export const columns1= [
+  export const columns1= [
     {
       title: '班级',
-      dataIndex: 'class',
-      key: 'class',
+      dataIndex: 'classInfo',
+      key: 'classInfo',
     },
     {
       title: '状态',
-      dataIndex: 'state',
-      key: 'state',
+      dataIndex: 'status',
+      key: 'status',
     },
     {
       title: '开课时间',
-      dataIndex: 'opentime',
-      key: 'opentime',
+      dataIndex: 'startTime',
+      key: 'startTime',
     },
     {
-      title: '教学组负责人',
-      dataIndex: 'teacher',
-      key: 'teacher',
+      title: '老师',
+      dataIndex: 'teacherInfo',
+      key: 'teacherInfo',
     },
     {
       title: '上课率',
-      dataIndex: 'shangkelv',
-      key: 'shangkelv',
+      dataIndex: 'enterRate',
+      key: 'enterRate',
+      render:text=>{
+        let num1=parseFloat(text.split("/")[0],10)   
+        let num2=parseFloat(text.split("/")[1],10);  
+        let num=num1/num2;
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
     },
     {
       title: '作业提交率',
-      dataIndex: 'homework',
-      key: 'homework',
+      dataIndex: 'homeworkSubmitRate',
+      key: 'homeworkSubmitRate',
+
+
+
+      render:text=>{
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
+    
+    
     },
     {
       title: '被点评情况',
-      dataIndex: 'dianping',
-      key: 'dianping',
+      dataIndex: 'beCommenttedRate',
+      key: 'beCommenttedRate',
+
+      render:text=>{
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
     },
     {
       title: '打卡率',
-      dataIndex: 'daka',
-      key: 'daka',
-    },
+      dataIndex: 'satisfyRate',
+      key: 'satisfyRate',
+
+
+
+
+      render:text=>{
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
+}
+    ,
     {
       title: '满意度',
-      dataIndex: 'manyidu',
-      key: 'manyidu',
+      dataIndex: 'beCommenttedRate',
+      key: 'beCommenttedRate',
+      
+      render:text=>{
+        let num=parseFloat(text,10)   //将其解析成10进制
+        if (num<0.8){
+            return <span className="Red">{text}</span>
+        }
+        if (num>0.95){
+            return <span className="Orange">{text}</span>
+        }else{
+            return <span>{text}</span>
+        }
+    }
     },
   ]
