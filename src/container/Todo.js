@@ -6,6 +6,9 @@ import 'antd/dist/antd.css'
 import {connect} from 'react-redux';
 import * as api from '../api';       //把api里所有的function放在  api   这个对象里
 import * as actionCreators from '../action';
+import '../App.css';
+
+
 
 
 class todo extends Component{
@@ -21,20 +24,20 @@ class todo extends Component{
     }
     
     render(){
-        
+        const { ...datas } = this.props;
         return(
             <div>
-                <Headerview state={this.props} dispatch={this.props.dispatch}/>
-                <Titleview state={this.props} dispatch={this.props.dispatch}/>       
+                <Headerview {...datas} />
+                <Titleview {...datas} />       
             </div>
         )
     }
 }
 
 const mapStateToProps = state => {
-    const { todos } = state;
+    const { text1_2,text2_2,text3_2 } = state;
     return {
-      todos
+        text1_2,text2_2,text3_2
     }
   }
   

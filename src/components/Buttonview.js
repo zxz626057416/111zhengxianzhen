@@ -18,10 +18,6 @@ class buttonview extends Component{
                 <div className="fh"><Button>返回</Button></div>
             </div>
         ):null
-
-
-
-
     }
 
 

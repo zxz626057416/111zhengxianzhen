@@ -14,7 +14,6 @@ const callServerApi = (endpoint, params) => {
     }).then(res => {
       if (res.data.ret === 1) {
         return resolve(res);
-        
       }
       return reject({ errMsg: res.data.errMsg });
     }).catch(err => {

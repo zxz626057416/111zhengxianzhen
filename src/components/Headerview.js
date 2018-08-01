@@ -3,15 +3,21 @@ import { connect } from 'react-redux';
 import { Avatar } from 'antd';
 import { Input } from 'antd';
 import { Button } from 'antd';
+import "../App.css"
 const Search = Input.Search;
-class Headerview extends Component {
 
 
+
+
+
+export default class Headerview extends Component {
+
+   
     renderText1_2 = () => {
-        const { state } = this.props;
-        let msg = state.text1_2.map((item, idx) => {
+        const { text1_2 } = this.props;
+        let msg = text1_2.map((item, idx) => {
             return (
-                <div className="text1-2">{item.content}</div>
+                <div  key={idx} className="text1-2">{item.content}</div>
             )
         })
         return msg;
@@ -19,10 +25,10 @@ class Headerview extends Component {
 
 
     renderText2_2 = () => {
-        const { state } = this.props;
-        let msg = state.text2_2.map((item, idx) => {
+        const { text2_2 } = this.props;
+        let msg = text2_2.map((item, idx) => {
             return (
-                <div className="text2-2">{item.content}</div>
+                <div  key={idx} className="text2-2">{item.content}</div>
             )
         })
         return msg;
@@ -30,10 +36,10 @@ class Headerview extends Component {
 
 
     renderText3_2 = () => {
-        const { state } = this.props;
-        let msg = state.text3_2.map((item, idx) => {
+        const { text3_2 } = this.props;
+        let msg = text3_2.map((item, idx) => {
             return (
-                <div>
+                <div key={idx}>
                     <div className="text3-1">{item.content}</div>
                     <div className="weixin">
                         <Search
@@ -61,7 +67,11 @@ class Headerview extends Component {
 
     
     render() {
+        const {todo}=this.props
+        console.log(todo)
         return (
+
+
             <div className="header_main">
                 <div className="avatar">
                     <Avatar size="large" icon="user" />
@@ -92,12 +102,11 @@ class Headerview extends Component {
                     <div className="one left">{this.renderText3_2()}</div>
                 </div>
             </div>
+
+
+
         )
     }
 }
-function mapStateToProps(state, ownProps) {
-    const props = state;
-    return props;
-}
 
-export default connect(mapStateToProps)(Headerview)
+
