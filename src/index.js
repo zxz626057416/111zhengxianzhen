@@ -8,19 +8,13 @@ import index from './reducers/index'
 import './index.css'
 import App from './App'
 
-
 import Todo from './container/Todo'
 import Dangan from './container/dangan'
 import Kecheng from './container/kecheng'
 
-
-
 import registerServiceWorker from './registerServiceWorker'
-
 const logger = createLogger();
 const store = createStore(index, applyMiddleware(logger));
-
-
 
 const routes = [{
   path: '/',
@@ -32,8 +26,6 @@ const routes = [{
     { path: 'Kecheng', component: Kecheng }
   ]
 }]
-
-
 
 ReactDOM.render(
   <Provider store={store}>

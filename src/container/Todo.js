@@ -17,9 +17,10 @@ class todo extends Component{
 
         const {Actions}=this.props;
         const mid='11'
-        Actions.fetchUserInfo(mid);
+
+        // Actions.fetchUserInfo(mid);
         
-        Actions.fetchLessonInfo(mid);
+        // Actions.fetchLessonInfo(mid);
          
     }
     
