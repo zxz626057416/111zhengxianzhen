@@ -7,6 +7,7 @@ import { Router, Route, IndexRedirect, browserHistory, IndexLink } from 'react-r
 import index from './reducers/index'
 import './index.css'
 import App from './App'
+import server from './middleware/severApi'
 
 import Todo from './container/Todo'
 import Dangan from './container/dangan'
@@ -14,7 +15,7 @@ import Kecheng from './container/kecheng'
 
 import registerServiceWorker from './registerServiceWorker'
 const logger = createLogger();
-const store = createStore(index, applyMiddleware(logger));
+const store = createStore(index, applyMiddleware(server,logger));
 
 const routes = [{
   path: '/',
