@@ -11,21 +11,39 @@ const init_state = {
   ],
   text3_2: [
   ],
+
+  text3_1:[
+
+  ],
+
   dataSource:[
   ],
+
+  real:[],
+
+  virtual:[],
+  
   dataSource1:[
   ],
+
+  dataSource2:[
+  ],
+
+  dataSource3:[
+  ],
+
+  dataSource4:[
+  ],
+
+
+
 }
 
 
 export default function TodoList(state = init_state, action) {
   switch (action.type) {
     case actionTypes.FETCH_USER_INFO_SUC:
-
-          console.log(action.response.data)
-
           const newState1 = {...state};
-
           const temp1=[
             {content:action.response.data.mid},
             {content:action.response.data.learningLesson},
@@ -43,20 +61,10 @@ export default function TodoList(state = init_state, action) {
             {content:action.response.data.tel
             },
           ]
-          console.log(temp3)
-          console.log(temp2)
-          console.log(temp1)
-
           newState1.text1_2=temp1
           newState1.text2_2=temp2
           newState1.text3_2=temp3
-          // console.log(newState1.text1_2)
-          // console.log(newState1.text1_2)
           return newState1;
-
-
-
-
 
 
           case actionTypes.FETCH_LESSON_INFO_SUC:
@@ -77,7 +85,67 @@ export default function TodoList(state = init_state, action) {
           newState2.dataSource[1].teacherInfo=laoshi1
           newState2.dataSource1[0].classInfo=banji2_1
           newState2.dataSource1[0].teacherInfo=laoshi2_1
+         
           return newState2;
+
+
+
+
+
+
+
+
+
+
+
+          case actionTypes.FETCH_CLASS_INFO_SUC:
+
+          
+          const newState3={...state}
+          console.log(action.response.data)
+          newState3.real=action.response.data.basic_info.real_teacher
+          newState3.virtual=action.response.data.basic_info.virtual_teacher
+
+          newState3.text3_1=action.response.data.basic_info
+          newState3.dataSource2=action.response.data.list
+         
+          console.log("123456")
+          console.log("123456")
+          console.log("123456")
+          return newState3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          case actionTypes.FETCH_STUDENT_INFO_SUC:
+          const newState4={...state}
+          // console.log(action.response.data)
+          // console.log(action.response.data)
+          newState4.dataSource4=action.response.data
+          // console.log("123456")
+          // console.log("123456")
+          // console.log("123456")
+          // console.log("123456")
+          // console.log("123456")
+          return newState4;
+        
+
+
+
+
     default:
       return state;
   }

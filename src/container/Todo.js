@@ -19,7 +19,7 @@ class todo extends Component{
         const mid='11'
         Actions.fetchUserInfo(mid);
         
-        Actions.fetchLessonInfo(mid);  
+        Actions.fetchLessonInfo(mid);
          
     }
     
@@ -35,9 +35,9 @@ class todo extends Component{
 }
 
 const mapStateToProps = state => {
-    const { text1_2,text2_2,text3_2 } = state;
+    const { text1_2,text2_2,text3_2,dataSource1,dataSource2,dataSource3,dataSource4, } = state;
     return {
-        text1_2,text2_2,text3_2
+        text1_2,text2_2,text3_2,dataSource1 ,dataSource2,dataSource3,dataSource4,
     }
   }
   

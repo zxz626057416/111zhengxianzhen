@@ -5,15 +5,8 @@ import { Input } from 'antd';
 import { Button } from 'antd';
 import "../App.css"
 const Search = Input.Search;
-
-
-
-
-
 export default class Headerview extends Component {
-
-   
-    renderText1_2 = () => {
+     renderText1_2 = () => {
         const { text1_2 } = this.props;
         let msg = text1_2.map((item, idx) => {
             return (
@@ -22,8 +15,6 @@ export default class Headerview extends Component {
         })
         return msg;
     }
-
-
     renderText2_2 = () => {
         const { text2_2 } = this.props;
         let msg = text2_2.map((item, idx) => {
@@ -33,8 +24,6 @@ export default class Headerview extends Component {
         })
         return msg;
     }  
-
-
     renderText3_2 = () => {
         const { text3_2 } = this.props;
         let msg = text3_2.map((item, idx) => {
@@ -62,13 +51,9 @@ export default class Headerview extends Component {
         })
         return msg;
     }
-
-
-
-    
     render() {
         const {todo}=this.props
-        console.log(todo)
+       
         return (
 
 
@@ -102,9 +87,6 @@ export default class Headerview extends Component {
                     <div className="one left">{this.renderText3_2()}</div>
                 </div>
             </div>
-
-
-
         )
     }
 }

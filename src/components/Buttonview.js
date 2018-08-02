@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {Button} from 'antd'
 
-class buttonview extends Component{
+export default class buttonview extends Component{
 
     render(){
 
@@ -23,9 +23,3 @@ class buttonview extends Component{
 
 }
 
-
-function mapStateToProps (state,ownProps){
-    const props=state;
-    return props;
-}
-export default connect(mapStateToProps)(buttonview)

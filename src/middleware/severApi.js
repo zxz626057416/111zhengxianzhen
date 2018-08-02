@@ -51,6 +51,7 @@ export default store => next => action => {
       next({
         type: `${type}_SUC`,
         response: res.data
+        
       });
     }).catch(err => {
       next({

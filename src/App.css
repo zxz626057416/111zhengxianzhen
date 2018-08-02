@@ -139,5 +139,45 @@ button,input{
 .Orange{
   color:orange;
 }
-
+.large{
+  font-size:40px;
+}
+.kecheng-header{
+  /* width:1200px; */
+  height:100px;
+  /* border:1px red solid; */
+  margin:0 auto;
+  text-align:center;
+}
+.kecheng-header-text{
+  
+  height:30px;
+  margin:25px;
+  /* border:1px green solid; */
+  display:inline-block;
+  font-size:20px;
+  text-align:20px;
+}
+.kecheng-header-text-one{
+  margin:3px;
+}
+.kecheng-header-text-one1{
+  margin-right:25px;
+}
+.dangan-header{
+  width:1000px;
+  height:50px;
+  /* border:1px red solid; */
+  margin:0 auto;
+  /* text-align:50px; */
+}
+.kecheng-header-button{
+  float:left;
+  margin:10px;
+}
+.kecheng-header-search{
+  width:200px;
+  float:right;
+  margin:3px;
+}
 

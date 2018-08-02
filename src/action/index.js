@@ -25,6 +25,31 @@ export function fetchLessonInfo(mid) {
   }
 }
 
+export function fetchClassInfo(mid) {
+
+  return {
+    SERVER_API: {
+      type: actionTypes.FETCH_CLASS_INFO,
+      endpoint: '/getClassInfo',
+      params: {
+        id:mid
+      }
+    }
+  }
+}
+
+
+export function fetchStudentInfo(mid) {
+  return {
+    SERVER_API: {
+      type: actionTypes.FETCH_STUDENT_INFO,
+      endpoint: '/getStudentList',
+      params: {
+        mid
+      }
+    }
+  }
+}
 
 
 
