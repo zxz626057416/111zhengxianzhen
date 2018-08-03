@@ -2,7 +2,9 @@ import axios from 'axios';
 import * as actionTypes from '../const/actionTypes';
 
 export function fetchUserInfo(mid) {
+  
   return {
+
     SERVER_API: {
       type: actionTypes.FETCH_USER_INFO,
       endpoint: '/getUserInfo',

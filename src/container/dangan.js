@@ -6,6 +6,10 @@ import { Input } from 'antd';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../action';
 import {connect} from 'react-redux';
+import { Link } from 'react-router'
+
+
+
 const Search = Input.Search;
 
 
@@ -40,7 +44,7 @@ class dangan extends Component {
                     </div>
                 </div>
                 <div>
-                   <Table  dataSource={dataSource4}   columns={columns3}/>
+                <Link  to="/Todo"><Table  dataSource={dataSource4}   columns={columns3}/></Link>
                 </div>
             </div>
         )

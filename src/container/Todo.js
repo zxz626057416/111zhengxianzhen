@@ -8,14 +8,12 @@ import * as api from '../api';       //把api里所有的function放在  api   �
 import * as actionCreators from '../action';
 import '../App.css';
 
-
-
-
 class todo extends Component{
         
     componentDidMount(){
 
         const {Actions}=this.props;
+        
         const mid='11'
 
         Actions.fetchUserInfo(mid);
@@ -48,5 +46,4 @@ const mapStateToProps = state => {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(todo)
-
+  export default connect(mapStateToProps, mapDispatchToProps)(todo)//

@@ -1,5 +1,14 @@
 import React,{Component} from  'react'
 import {Icon} from 'antd'
+
+
+
+//用   onRow 标签   精确到每一行
+
+
+//阻止事件冒泡    handle
+// handleStopBubble
+
  export const columns= [
     {
       title: '班级',

@@ -2,7 +2,12 @@ import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import Buttonview from '../components/Buttonview'
 import Tableview from '../components/Tableview'
+import {Button} from 'antd'
 import { Tabs } from 'antd';
+import { Link } from 'react-router'
+
+
+
 // import Kecheng  from '../components/kecheng'
 // import Dangan from '../components/dangan'
 
@@ -18,15 +23,17 @@ class Titleview extends Component {
         const TabPane = Tabs.TabPane;
         const {dataSource} = this.props;
         const {dataSource1} = this.props;
-        const {dataSource2} = this.props;
-        const {dataSource3} = this.props;
-      
+        
 
         return(
 
+            <div>
 
+            <Link  to="/dangan"><Button className="titleview-fanhui">返回</Button></Link>
             
+
             <Tabs defaultActiveKey="1" >
+            
                 <TabPane tab="课程信息" key="1">
                     <Buttonview  state={this.props} dispatch={this.props.dispatch}/>
 
@@ -38,9 +45,9 @@ class Titleview extends Component {
                 <TabPane tab="满意度及反馈" key="2">这是第二个页面</TabPane>
                
             </Tabs>
-            
+            </div>
         )
-        
+      
     }
 
 }
